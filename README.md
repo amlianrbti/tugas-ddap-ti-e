@@ -35,6 +35,6 @@ Project ini diimplementasikan menggunakan:
 
 ## 🛠️ Cara Menjalankan Project
 
-clone repository ini
-flutter pub get
-flutter run
+- clone repository ini
+- flutter pub get
+- flutter run
