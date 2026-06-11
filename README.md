@@ -1,17 +1,40 @@
-# ddap_web
+# DDAP Redesign Web
 
-A new Flutter project.
+Tugas Project Akhir Teknologi Informasi  
+Semester 2 - Teknologi Informasi
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📌 Deskripsi Project
+Project ini merupakan hasil redesign web yang dimulai dari tahap mockup hingga prototype menggunakan Figma, kemudian diimplementasikan ke dalam aplikasi.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## 📋 Ketentuan Tugas
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Membuat mockup hingga prototype dari semua halaman yang dirancang di Figma
+- Minimal 3 halaman redesign
+- Bonus point jika diimplementasikan menggunakan Flutter atau Jetpack 
+
+---
+
+## 🚀 Implementasi
+Project ini diimplementasikan menggunakan:
+
+- Flutter (UI Framework)
+- Dart (Programming Language)
+
+---
+
+## 📱 Halaman yang Dibuat
+- Home Page
+- Gallery Page
+- (Tambahkan halaman lain jika ada)
+
+---
+
+## 🛠️ Cara Menjalankan Project
+
+clone repository ini
+flutter pub get
+flutter run
