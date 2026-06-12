@@ -84,8 +84,22 @@ class ToserbakuSection extends StatelessWidget {
 
         return LayoutBuilder(
           builder: (context, constraints) {
-            final isMobile = constraints.maxWidth < 768;
-            int crossAxisCount = constraints.maxWidth > 800 ? 5 : 2;
+            final width = constraints.maxWidth;
+            final isMobile = width < 768;
+
+            int crossAxisCount;
+            int itemCount;
+
+            if (width < 768) {
+              crossAxisCount = 2;
+              itemCount = products.length > 4 ? 4 : products.length;
+            } else if (width < 1024) {
+              crossAxisCount = 3;
+              itemCount = products.length > 6 ? 6 : products.length;
+            } else {
+              crossAxisCount = 5;
+              itemCount = products.length > 10 ? 10 : products.length;
+            }
 
             return Container(
               width: double.infinity,
@@ -113,25 +127,17 @@ class ToserbakuSection extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 40),
-
                   GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-
-                    // HP hanya tampil 4 produk
-                    itemCount: isMobile
-                        ? (products.length > 4 ? 4 : products.length)
-                        : products.length,
-
+                    itemCount: itemCount,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: crossAxisCount,
                       crossAxisSpacing: isMobile ? 12 : 20,
                       mainAxisSpacing: isMobile ? 12 : 20,
                       childAspectRatio: isMobile ? 0.65 : 0.72,
                     ),
-
                     itemBuilder: (context, index) {
                       final String rawName = products[index]["name"] ?? "";
                       final String price = products[index]["price"] ?? "";
@@ -156,9 +162,7 @@ class ToserbakuSection extends StatelessWidget {
                                 ),
                               ),
                             ),
-
                             const SizedBox(height: 10),
-
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,9 +177,7 @@ class ToserbakuSection extends StatelessWidget {
                                       height: 1.2,
                                     ),
                                   ),
-
                                   const SizedBox(height: 4),
-
                                   Text(
                                     price,
                                     style: _hanumanStyle(
@@ -191,9 +193,7 @@ class ToserbakuSection extends StatelessWidget {
                       );
                     },
                   ),
-
                   const SizedBox(height: 50),
-
                   Center(
                     child: ElevatedButton(
                       onPressed: () => launchUrl(
